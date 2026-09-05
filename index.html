@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ManaVoter: a Telugu electoral roll search engine built for Telangana. The pilot phase has concluded.">
+<meta name="theme-color" content="#FAF8F6">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ManaVoter">
+<meta property="og:title" content="ManaVoter: Pilot Concluded">
+<meta property="og:description" content="A Telugu electoral roll search engine built for Telangana, indexing 1.23 crore voter records across 6 districts. The pilot phase has concluded.">
+<meta property="og:url" content="https://manavoter.in">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ManaVoter: Pilot Concluded">
+<meta name="twitter:description" content="A Telugu electoral roll search engine built for Telangana, indexing 1.23 crore voter records across 6 districts. The pilot phase has concluded.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='18'%20fill='%231A1A1A'/%3E%3Ctext%20x='32'%20y='45'%20font-family='Georgia,%20serif'%20font-size='36'%20fill='%23FAF8F6'%20text-anchor='middle'%3E%E0%B0%AE%3C/text%3E%3C/svg%3E">
+
+<title>ManaVoter • Pilot Concluded</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --color-terracotta: #C04828;
+    --color-terracotta-light: #E06040;
+    --color-charcoal: #1A1A1A;
+    --color-blush: #F5EDE8;
+    --color-blush-border: #E0D0C8;
+    --color-forest: #2E7D52;
+    --color-forest-bg: rgba(46, 125, 82, 0.1);
+    --color-stone: #888780;
+    --color-stone-light: #EAEAEA;
+    --color-white: #FFFFFF;
+
+    --bg-primary: #FAF8F6;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F5EDE8;
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A48;
+    --text-tertiary: #888780;
+    --border-color: rgba(136, 135, 128, 0.2);
+    --border-focus: #C04828;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-pill: 20px;
+    --radius-logo: 14px;
+
+    --shadow: 0 10px 30px -10px rgba(26, 26, 26, 0.08);
+    --ease-fast: 0.15s ease;
+    --ease-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Nav */
+  .nav {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand { display: flex; align-items: center; gap: 11px; }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--radius-logo);
+    background: var(--color-charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .brand-mark span {
+    font-family: serif;
+    color: var(--bg-primary);
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .brand-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .nav-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 13px;
+    border-radius: var(--radius-pill);
+    background: var(--color-blush);
+    border: 1px solid var(--color-blush-border);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-stone);
+  }
+
+  /* Hero */
+  .hero {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 64px 0 90px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: var(--text-primary);
+  }
+
+  h1 .accent { color: var(--color-terracotta); }
+
+  .hero-description {
+    max-width: 46ch;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .button {
+    min-height: 46px;
+    padding: 0 20px;
+    border-radius: var(--radius-md);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform var(--ease-fast), background var(--ease-fast), box-shadow var(--ease-fast), border-color var(--ease-fast), color var(--ease-fast);
+  }
+
+  .button-primary {
+    background: var(--color-terracotta);
+    color: var(--color-white);
+    box-shadow: 0 4px 12px rgba(192, 72, 40, 0.2);
+  }
+
+  .button-primary:hover {
+    background: var(--color-terracotta-light);
+    box-shadow: 0 6px 16px rgba(192, 72, 40, 0.3);
+  }
+
+  .button-secondary {
+    background: var(--color-white);
+    border: 1px solid rgba(136, 135, 128, 0.4);
+    color: var(--color-charcoal);
+  }
+
+  .button-secondary:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-terracotta);
+  }
+
+  /* Stat card grid beside hero copy */
+  .stat-panel {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat {
+    padding: 22px 18px;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .stat:nth-child(2n) { border-right: none; }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
+
+  .stat-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    margin-top: 4px;
+    color: var(--text-tertiary);
+    font-size: 12px;
+  }
+
+  /* Sections */
+  .section {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 0 0 90px;
+  }
+
+  .section-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow);
+    padding: clamp(30px, 5vw, 52px);
+  }
+
+  .section-label {
+    color: var(--color-terracotta);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    margin-bottom: 18px;
+  }
+
+  .section-text {
+    max-width: 68ch;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .section-text + .section-text { margin-top: 14px; }
+
+  .section-text code {
+    font-family: monospace;
+    font-size: 0.9em;
+    background: var(--bg-tertiary);
+    padding: 1px 6px;
+    border-radius: var(--radius-sm);
+  }
+
+  .pipeline {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .pipeline-item {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--color-blush-border);
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+  }
+
+  /* Contact */
+  .contact-card {
+    margin-top: 22px;
+    padding: 26px;
+    border-radius: var(--radius-lg);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--color-blush-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .contact-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .contact-text { color: var(--text-tertiary); font-size: 13px; }
+
+  .link-row {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid rgba(136, 135, 128, 0.4);
+    padding: 8px 14px;
+    border-radius: var(--radius-pill);
+    transition: border-color var(--ease-fast), color var(--ease-fast), background var(--ease-fast);
+  }
+
+  .link-pill:hover {
+    border-color: var(--color-terracotta);
+    color: var(--color-terracotta);
+    background: rgba(192, 72, 40, 0.04);
+  }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--border-color); }
+
+  .footer-inner {
+    width: min(1000px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 26px 0 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--text-tertiary);
+    font-size: 12px;
+  }
+
+  .footer-brand {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  /* One orchestrated entrance for the hero only */
+  .hero-grid > * {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise 0.55s var(--ease-normal) forwards;
+  }
+  .hero-grid > *:nth-child(2) { animation-delay: 0.08s; }
+
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  @media (max-width: 780px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero { padding: 44px 0 64px; }
+    .contact-card { flex-direction: column; align-items: flex-start; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="brand">
+    <div class="brand-mark"><span>మ</span></div>
+    <div class="brand-name">ManaVoter</div>
+  </div>
+  <div class="nav-status"><span class="status-dot"></span>Pilot concluded</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Mana<span class="accent">Voter</span> is offline.</h1>
+        <p class="hero-description">A Telugu electoral roll search engine built for Telangana. The pilot ran its course, served its users, and is now retired.</p>
+        <div class="actions">
+          <a href="#about" class="button button-primary">About the project</a>
+          <a href="#contact" class="button button-secondary">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="stat-panel">
+        <div class="stat">
+          <div class="stat-value">1.23Cr</div>
+          <div class="stat-label">Records indexed</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">6</div>
+          <div class="stat-label">Districts covered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">&lt;100ms</div>
+          <div class="stat-label">Query latency</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">300+</div>
+          <div class="stat-label">Users, zero marketing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-card">
+      <div class="section-label">About ManaVoter</div>
+      <h2 class="section-title">Built to fix a real encoding problem, not just a demo.</h2>
+      <p class="section-text">The Election Commission's own PDFs break Telugu text search: their Type3 font encoding scrambles the same name into different byte sequences depending on when it was typed in. ManaVoter ingested those PDFs with Tabula-java and Apache PDFBox, then ran every name through a consonant-skeleton normalization algorithm I designed and built myself, stripping diacritics down to canonical forms so variant spellings still matched.</p>
+      <p class="section-text">The result indexed 1.23 crore voter records across six districts, served from a thread-safe immutable in-memory index built with Spring Boot's <code>@PostConstruct</code>, so concurrent reads never hit synchronization overhead. That's what kept lookups under 100ms.</p>
+      <p class="section-text">It ran in production on Railway with a custom domain and SSL, picked up 300+ users and 2,300+ tracked events with no marketing at all. The pilot proved the approach and found its users. That phase is done, and the live search is currently offline.</p>
+      <div class="pipeline">
+        <span class="pipeline-item">Java 21</span>
+        <span class="pipeline-item">Spring Boot</span>
+        <span class="pipeline-item">React / TypeScript</span>
+        <span class="pipeline-item">Oracle ATP 19c</span>
+        <span class="pipeline-item">Tabula-java + PDFBox</span>
+        <span class="pipeline-item">Consonant-skeleton normalizer</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-card">
+      <div class="section-label">Stay in touch</div>
+      <h2 class="section-title">Interested in the project?</h2>
+      <p class="section-text">Developers, recruiters, and past users are welcome to reach out, whether about the engineering, a possible collaboration, or anything else.</p>
+
+      <div class="contact-card">
+        <div>
+          <div class="contact-title">Want a look at the source?</div>
+          <div class="contact-text">The codebase is private, but email me and I'm happy to share it.</div>
+        </div>
+        <a href="mailto:ziyadhyder01@gmail.com" class="button button-primary">Email me</a>
+      </div>
+
+      <div class="link-row">
+        <a class="link-pill" href="https://ziyadhyder.dev" target="_blank" rel="noopener">Portfolio</a>
+        <a class="link-pill" href="https://www.linkedin.com/in/ziyadhyder" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="link-pill" href="https://github.com/ziyad-hyder" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">ManaVoter</div>
+    <div>© <span id="year"></span> ManaVoter · Built by <a href="https://ziyadhyder.dev" target="_blank" rel="noopener" style="color:var(--text-secondary); text-decoration:underline;">Ziyad Hyder</a></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
